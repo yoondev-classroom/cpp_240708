@@ -26,5 +26,5 @@ void foo() { }
 
 int main()
 {
-    foo();
+    // foo(); // error!
 }
