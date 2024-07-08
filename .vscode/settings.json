@@ -40,6 +40,10 @@
         "tuple": "cpp",
         "typeinfo": "cpp",
         "variant": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "array": "cpp",
+        "charconv": "cpp",
+        "optional": "cpp",
+        "print": "cpp"
     }
 }
