@@ -25,6 +25,7 @@ int main(void)
 }
 #endif
 
+#if 0
 // _square
 double square(double x) { return x * x;}
 
@@ -32,4 +33,19 @@ double square(double x) { return x * x;}
 int main(void)
 {
   
+}
+#endif
+
+extern void goo(void) {}
+// 외부 연결 => External linkage
+
+static void foo(void) {}
+// 해당 하는 함수 또는 전역 변수를 다른 파일에서 접근이 불가능합니다.
+// => Internal linkage
+
+
+
+int main(void)
+{
+
 }
