@@ -33,7 +33,6 @@ int main()
 
 template <typename TYPE>
 TYPE square(TYPE x) { return x * x; }
-
 // int square(int x) { return x * x; }
 
 int main()

@@ -10,7 +10,9 @@
 // - LLVM - Clang
 
 // 3. C++ 표준
-// 1998: 1차 표준안, C++98
+// 1983: C++ 탄생
+//-------------
+// 1998: 1차 표준안, C++98 => STL(Standard Template Library)
 // 2003: C++03
 //--------------
 // 2011: C++11  => Modern C++
@@ -24,7 +26,6 @@
 
 // Compile: Ctrl + F7
 // Compile + Run: Ctrl + F5
-
 
 #if 0
 #include <stdio.h>
@@ -51,5 +52,5 @@ int main()
 
 int main()
 {
-	std::cout << "Hello, C++" << std::endl;
+    std::cout << "Hello, C++" << std::endl;
 }
