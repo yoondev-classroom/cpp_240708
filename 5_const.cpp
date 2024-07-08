@@ -45,7 +45,9 @@ int main()
 
 int main()
 {
-  constexpr const int x = 10; // 컴파일 상수
+  // constexpr const int x = 10; // 컴파일 상수
+  constexpr int x = 10;
+  // - const가 생략 가능합니다.
 
   int n;
   std::cin >> n;
