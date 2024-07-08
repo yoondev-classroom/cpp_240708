@@ -11,7 +11,7 @@ int main(void)
 }
 #endif
 
-
+#if 0
 #include <stdio.h>
 
 int main(void)
@@ -22,4 +22,14 @@ int main(void)
   int arr[x]; // 에러!
 
 
+}
+#endif
+
+// _square
+double square(double x) { return x * x;}
+
+// _main
+int main(void)
+{
+  
 }
