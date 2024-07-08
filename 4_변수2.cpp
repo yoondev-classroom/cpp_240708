@@ -75,3 +75,8 @@ int main()
         int n2 = { (int)l };
     }
 }
+
+// C    -> Go
+// C++  -> Rust
+// Java -> Kotlin
+// ObjC -> Swift
