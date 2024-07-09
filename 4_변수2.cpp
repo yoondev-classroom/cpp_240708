@@ -54,6 +54,7 @@ int main()
 }
 #endif
 
+#if 1
 // - Uniform Initialization
 // => 다른 타입 간의 암묵적인 변환이 허용되지 않습니다.
 //   : Preventing Narrow
@@ -61,10 +62,10 @@ int main()
 {
     double d1 = { 3.14 };
 
-    if (d1 > INT_MAX || d < INT_MIN) {
+    if (d1 > INT_MAX || d1 < INT_MIN) {
         std::cout << "error!" << std::endl;
     } else {
-        int n = { (int)d1 };
+        int n { (int)d1 };
         printf("n: %d\n", n);
     }
 
@@ -80,3 +81,4 @@ int main()
 // C++  -> Rust
 // Java -> Kotlin
 // ObjC -> Swift
+#endif
