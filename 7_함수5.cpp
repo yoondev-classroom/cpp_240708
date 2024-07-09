@@ -38,7 +38,7 @@ TYPE square(TYPE x) { return x * x; }
 int main()
 {
     short s = 100;
-    auto r = square(s);
+    auto r = square<int>(s);
 
     //   type parameter
     //      |

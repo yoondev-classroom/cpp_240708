@@ -29,34 +29,34 @@ int main()
 #if 0
 int main()
 {
-   const int x = 10 + 5;
-   std::cout << x << std::endl;
+    const int x = 10 + 5;
+    // x = 10; // 컴파일 오류!
+    // - 상수는 초기화 이후에 값을 변경할 수 없습니다.
 
-   int arr[x];
-   // 상수 표현식으로 사용이 가능합니다. - C++
+    std::cout << x << std::endl;
 
-   
-} 
+    int arr[x];
+    // 상수 표현식으로 사용이 가능합니다. - C++
+}
 #endif
 
 // C++11 에서 새로운 키워드가 도입되었습니다.
 // => constexpr
 
-
+#if 1
 int main()
 {
-  // constexpr const int x = 10; // 컴파일 상수
-  constexpr int x = 10;
-  // - const가 생략 가능합니다.
+    // constexpr const int x = 10; // 컴파일 상수
+    constexpr int x = 10;
+    // - const가 생략 가능합니다.
 
-  int n;
-  std::cin >> n;
+    int n;
+    std::cin >> n;
 
-  const int c = n; // 런타임 상수
-  // constexpr const int c = n; // 오류!, 컴파일 타임 상수만 가능합니다.
+    const int c = n; // 런타임 상수
+    // constexpr const int c = n; // 오류!, 컴파일 타임 상수만 가능합니다.
 
-  printf("%d\n", n);
-  printf("%d\n", c);
-
-
+    printf("%d\n", n);
+    printf("%d\n", c);
 }
+#endif

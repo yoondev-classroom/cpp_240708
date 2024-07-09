@@ -39,6 +39,7 @@ int main()
 //       using namespace std;
 
 // 2) C++11, Type 별칭
+//  => 템플릿의 별칭으로 사용이 가능합니다.
 
 int main()
 {

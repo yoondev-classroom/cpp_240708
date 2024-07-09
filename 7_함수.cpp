@@ -9,7 +9,7 @@ using namespace std;
 // 1) 파라미터 기본값은 반드시 마지막 파라미터부터 지정이 가능합니다.
 // 2) 파라미터 기본값은 선언부에 정의합니다.
 
-#if 0
+#if 1
 int Add(int a, int b, int c = 0, int d = 0)
 {
     return a + b + c + d;
