@@ -101,6 +101,7 @@ int main()
 }
 #endif
 
+#if 0
 // 4. new를 통해서 메모리를 할당하면, 초기값을 지정할 수 있습니다.
 int main()
 {
@@ -114,4 +115,23 @@ int main()
         std::cout << p[i] << std::endl;
     }
     delete[] p; // !!
+}
+#endif
+
+int global; // 전역 변수
+
+void foo() { }
+
+int main()
+{
+    static int slocal; // 정적 지역 변수
+    int local; // 지역 변수
+
+    int* p = new int; // 동적 메모리 할당(힙 변수)
+
+    std::cout << (void*)&foo << std::endl;
+    std::cout << &global << std::endl;
+    std::cout << &slocal << std::endl;
+    std::cout << p << std::endl;
+    std::cout << &local << std::endl;
 }
