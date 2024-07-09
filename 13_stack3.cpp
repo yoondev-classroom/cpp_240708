@@ -9,11 +9,17 @@ using namespace std;
 //   - 데이터: 상태
 //   -  함수: 행위
 
-struct Stack {
+// struct의 기본 접근 지정자는 public 입니다.
+// class의 기본 접근 지정자는 private 입니다.
+
+// - class는 객체를 설계할 때 사용되는 키워드입니다.
+
+class Stack {
     // 멤버 변수(데이터) / 상태
     int buff[10];
     int top;
 
+public:
     // 멤버 함수 / 행위(메소드)
     void Push(int n)
     {
@@ -33,6 +39,11 @@ struct Stack {
     }
 };
 
+// 객체의 상태는 외부에서 직접 접근이 불가능해야 합니다.
+// 객체의 상태는 제공되는 메소드를 통해 접근되어야 합니다.
+// => 정보 은닉(Information Hiding)
+//  : public, private 접근 지정자
+
 int main()
 {
     Stack s1;
@@ -44,6 +55,8 @@ int main()
     s1.Push(10);
     s1.Push(20);
     s1.Push(30);
+
+    // s1.top = 100; // 에러!
 
     std::cout << s1.Pop() << std::endl;
     std::cout << s1.Pop() << std::endl;
