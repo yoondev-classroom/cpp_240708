@@ -35,13 +35,32 @@ int process2()
     return 0;
 }
 
-// C++17, If Statement with Initializer
+// C++17, If/Switch Statement with Initializer
+enum State {
+    TASK_RUNNING,
+    TASK_STOPPED,
+    TASK_WAIT
+};
+
+State GetTaskState() { return TASK_RUNNING; }
 
 int main()
 {
+
+    switch (State state = GetTaskState(); state) {
+    case State::TASK_RUNNING:
+        // ...
+        break;
+    case State::TASK_STOPPED:
+        break;
+    case State::TASK_WAIT:
+        break;
+    default:
+        break;
+    }
+
     // 함수가 실패 가능성이 있는 경우, 반드시 반환값을 통해
     // 실패 여부를 체크해야 합니다.
-
     if (int ret = process1(); ret != 0) {
         // ...
     }
