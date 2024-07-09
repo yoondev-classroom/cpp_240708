@@ -54,6 +54,7 @@ int main()
 }
 #endif
 
+#if 0
 int main()
 {
     int n = 100;
@@ -63,4 +64,29 @@ int main()
     // const int& r = n;
     int const& r = n;
     // r = 10; /* 에러! */
+}
+#endif
+
+#if 0
+int main()
+{
+    int n = 10;
+    int* pn1 = &n; /* OK */
+    const int* pn2 = &n; /* OK */
+
+    int& rn = n; /* OK */
+    const int& rn2 = n; /* OK */
+}
+#endif
+
+int main()
+{
+    const int n = 10;
+    // n = 100; // 에러!
+
+    // int* pn1 = &n; /* 에러 */
+    const int* pn2 = &n; /* OK */
+
+    // int& rn = n; /* 에러 */
+    const int& rn2 = n; /* OK */
 }
