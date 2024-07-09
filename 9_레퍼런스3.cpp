@@ -92,8 +92,15 @@ void print_array(int (&r)[3])
 template <typename TYPE>
 inline void print_array(TYPE& r)
 {
+#if 0
     for (int i = 0; i < sizeof(r) / sizeof(r[0]); i++) {
         std::cout << r[i] << std::endl;
+    }
+#endif
+
+    // Ranged-for를 사용할 수 있습니다.
+    for (auto e : r) {
+        std::cout << e << std::endl;
     }
 }
 
