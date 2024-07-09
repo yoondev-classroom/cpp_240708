@@ -37,7 +37,7 @@ int main()
 
     // 메모리를 재해석
     int x = 0x12345678;
-    char* px = (char*)&x;
+    unsigned char* px = (unsigned char*)&x;
 
     printf("%X\n", *(px + 0));
     printf("%X\n", *(px + 1));
@@ -78,7 +78,7 @@ int main()
 //      const T& -> T&
 
 // 4) dynamic_cast
-
+#if 0
 int main()
 {
     double d { 3.14 };
@@ -101,4 +101,48 @@ int main()
     // char* c = static_cast<char*>(str);
     // char* c = reinterpret_cast<char*>(str);
     char* c = const_cast<char*>(str);
+}
+#endif
+
+// C++ 기본 타입
+// - bool 타입
+//  true / false
+
+// - 문자 타입
+//   char
+
+// - 정수 타입(signed / unsigned)
+//  : 플랫폼과 컴파일러에 따라 정수 타입의 크기는 다릅니다.
+
+//   [s][][][][][][][]
+//    : -128 ~ 127
+
+//   [][][][][][][][]
+//         0 ~ 255
+
+//   signed char(1바이트) / unsigned char
+//   short: -32768 ~ 32767 / unsigned short
+//   int: -21억 ~ 21억 / unsigned int
+
+//   long
+//   long long
+
+// - 실수 타입
+//   float
+//   double
+
+#include <cstdint>
+// stdint.h
+
+int main()
+{
+    int8_t a;
+    int16_t b;
+    uint16_t c;
+
+    signed char ch = 42;
+    // C/C++ 에서는 char가 3가지가 있습니다.
+    // - char(문자 타입)
+    // - signed char(부호 있는 1바이트 정수)
+    // - unsigned char(부호 없는 1바이트 정수)
 }
