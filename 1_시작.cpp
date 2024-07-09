@@ -27,22 +27,21 @@
 // Compile: Ctrl + F7
 // Compile + Run: Ctrl + F5
 
-#if 0
+#if 1
 #include <stdio.h>
 
-void foo(void) {}
-void goo() {}
-
+void foo(void) { }
+void goo() { }
 
 int main()
 {
-	// goo(10, 20);
+    // goo(10, 20);
 
-	printf("Hello, C\n");
-	
-	// return 0;
-	// C++에서는 main함수의 반환값을 생략할 경우,
-	// 컴파일러가 자동으로 return 0로 처리합니다.
+    printf("Hello, C\n");
+
+    // return 0;
+    // C++에서는 main함수의 반환값을 생략할 경우,
+    // 컴파일러가 자동으로 return 0로 처리합니다.
 }
 #endif
 
@@ -50,7 +49,19 @@ int main()
 // - C++의 표준 헤더파일은 확장자가 없습니다.
 #include <iostream>
 
+// std::cout : 표준 출력 -> stdout
+// std::cin  : 표준 입력 -> stdin
+// std::cerr : 표준 에러 -> stderr
+
 int main()
 {
     std::cout << "Hello, C++" << std::endl;
 }
+
+// 표준 입출력
+// - 프로그램: 실행 가능한 파일
+// - 프로세스: 실행 중인 프로그램
+//   3개의 파일
+//    1) 0: stdin  => 키보드
+//    2) 1: stdout => 터미널/모니터
+//    3) 2: stderr => 표준 에러 장치 => 터미널/모니터

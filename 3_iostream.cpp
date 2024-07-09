@@ -42,4 +42,5 @@ int main()
     std::cout << n << std::endl;
     std::cout << l << std::endl;
     std::cout << f << std::endl;
+    // 오버로딩을 통해 각 타입에 따라 출력되는 방법을 제공하고 있습니다.
 }

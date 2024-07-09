@@ -7,7 +7,7 @@ using namespace std;
 
 // C++23 에서 새로운 출력 방법이 추가되었습니다.
 
-#if 0
+#if 1
 int main()
 {
 

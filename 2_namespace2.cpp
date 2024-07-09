@@ -3,7 +3,7 @@
 #include <iostream>
 
 // 1) 전체 이름을 명시하는 방법
-#if 0
+#if 2
 namespace audio {
 void Play() { std::cout << "Audio Play" << std::endl; }
 }
