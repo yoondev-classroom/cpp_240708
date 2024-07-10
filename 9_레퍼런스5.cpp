@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-#if 0
+#if 1
 int main()
 {
     int n;
@@ -38,13 +38,12 @@ void foo(int& r)
     std::cout << "lvalue reference" << std::endl;
 }
 
+// C++11, rvalue reference
+// : rvalue를 참조할 수 있습니다.
 void foo(int&& r)
 {
     std::cout << "rvalue reference" << std::endl;
 }
-
-// C++11, rvalue reference
-// : rvalue를 참조할 수 있습니다.
 
 int main()
 {
