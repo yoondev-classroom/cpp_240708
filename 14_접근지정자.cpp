@@ -12,6 +12,8 @@ using namespace std;
 // 3. friend
 //  : friend로 선언된 함수 또는 클래스는 해당하는 클래스의 private 영역에
 //    접근이 가능합니다.
+//  => friend는 클래스의 캡슐화의 정책을 깨뜨리는 것이 아니라,
+//     확장할 수 있습니다.
 
 class User {
     std::string name;
@@ -24,12 +26,16 @@ public:
         age = n;
     }
 
+    // Getter - 접근자 메소드(멤버 함수)
+    int GetAge() { return age; }
+    std::string GetName() { return name; }
+
     void PrintUser()
     {
         std::cout << name << "," << age << std::endl;
     }
 
-    friend void PrintUser(User user); // friend 선언
+    // friend void PrintUser(User user); // friend 선언
     friend class UserPrinter;
 };
 
@@ -43,7 +49,8 @@ public:
 
 void PrintUser(User user)
 {
-    std::cout << user.name << "," << user.age << std::endl;
+    // std::cout << user.name << "," << user.age << std::endl;
+    std::cout << user.GetName() << ", " << user.GetAge() << std::endl;
 }
 
 int main()
