@@ -1,9 +1,9 @@
-// 20_객체복사2.cpp
+// 20_객체복사3.cpp
 #include <iostream>
 using namespace std;
 
 // => 복사 정책
-// 1) 깊은 복사
+// 2) 참조 계수(Reference Counting)
 
 class User {
     char* name;
