@@ -14,14 +14,12 @@ int top = 0;
 
 void Push(int n)
 {
-    buff[top] = n;
-    ++top;
+    buff[top++] = n;
 }
 
 int Pop()
 {
-    --top;
-    return buff[top];
+    return buff[--top];
 }
 
 int main()

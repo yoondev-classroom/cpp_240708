@@ -78,7 +78,7 @@ int main()
 //      const T& -> T&
 
 // 4) dynamic_cast
-#if 0
+#if 1
 int main()
 {
     double d { 3.14 };

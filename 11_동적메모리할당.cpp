@@ -30,7 +30,7 @@ int main()
         std::cout << *p << std::endl;
 
         free(p);
-        p = NULL;
+        p = nullptr;
     }
 }
 #endif
