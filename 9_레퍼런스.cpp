@@ -57,11 +57,13 @@ int main()
 int main()
 {
     // 유효하지 않은 포인터는 반드시 NULL로 초기화해야 합니다.
-    int* p = NULL;
+    // int* p = NULL;
+    int* p = nullptr;
     std::cout << p << std::endl;
 
     // 포인터를 사용하기 전에, 반드시 NULL 체크를 수행해야 합니다.
     // if (p != NULL) {
+    // if (p != nullptr) {
     if (p) {
         *p = 42;
         std::cout << *p << std::endl;
@@ -69,6 +71,7 @@ int main()
 }
 #endif
 
+#if 0
 int main()
 {
     int n;
@@ -84,3 +87,19 @@ int main()
     std::cout << r << std::endl;
     // 레퍼런스는 널이 될수없기 때문에, 널체크가 필요하지 않습니다.
 }
+#endif
+
+#if 0
+int& foo()
+{
+    int data = 10;
+    return data;
+}
+
+int main()
+{
+    // 수명
+    int& r = foo();
+    r = 1000; /* 유효하지 않은 메모리 참조, 미정의 동작*/
+}
+#endif

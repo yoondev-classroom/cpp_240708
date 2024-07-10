@@ -79,6 +79,7 @@ int main()
 }
 #endif
 
+// const 상수는 반드시 읽기 전용 포인터/레퍼런스를 사용해야 합니다.
 int main()
 {
     const int n = 10;

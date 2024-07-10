@@ -74,18 +74,31 @@ int main()
 #endif
 
 #if 0
-void print_array(int (&r)[5])
+void print_str(const char* str)
 {
-    for (int i = 0; i < sizeof(r) / sizeof(r[0]); i++) {
-        std::cout << r[i] << std::endl;
+#if 0
+    int i = 0;
+    for (int i = 0; str[i] != '\0'; ++i) {
+        std::cout << str[i];
     }
+#endif
+
+    //      p
+    //      |
+    // hello0
+    const char* p = str;
+    while (*p != '\0') {
+        std::cout << *p;
+        ++p;
+    }
+
+    std::cout << endl;
 }
 
-void print_array(int (&r)[3])
+int main()
 {
-    for (int i = 0; i < sizeof(r) / sizeof(r[0]); i++) {
-        std::cout << r[i] << std::endl;
-    }
+    const char* str = "hello";
+    print_str(str);
 }
 #endif
 
@@ -104,11 +117,25 @@ inline void print_array(TYPE& r)
     }
 }
 
+void print_array(int (&r)[5])
+{
+    for (int i = 0; i < sizeof(r) / sizeof(r[0]); i++) {
+        std::cout << r[i] << std::endl;
+    }
+}
+
+void print_array(int (&r)[3])
+{
+    for (int i = 0; i < sizeof(r) / sizeof(r[0]); i++) {
+        std::cout << r[i] << std::endl;
+    }
+}
+
 int main()
 {
     int x[3] = { 10, 20, 30 };
 
-    // int(&r)[5] = x;
+    // int(&r)[3] = x;
     print_array(x);
 
     // std::cout << sizeof(r) << std::endl;
