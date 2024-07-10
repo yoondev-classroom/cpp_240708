@@ -14,10 +14,10 @@ class Person {
 
 public:
     // 소멸자는 1개만 제공할 수 있습니다.
-    ~Person()
-    {
-        delete[] name;
-    }
+    // ~Person()
+    // {
+    //     delete[] name;
+    // }
 
     // 생성자로 전달된 문자열을 복사해서 사용합니다.
     Person(const char* s)
@@ -30,10 +30,27 @@ public:
     {
         std::cout << name << std::endl;
     }
+
+#if 0
+    // 객체를 대상으로 new/delete를 수행할 때,
+    // 메모리 할당의 연산을 재정의할 수 있습니다.
+    void* operator new(size_t size)
+    {
+        std::cout << "객체 메모리 할당" << std::endl;
+        return malloc(size);
+    }
+
+    void operator delete(void* p, size_t)
+    {
+        std::cout << "객체 메모리 해지" << std::endl;
+        free(p);
+    }
+#endif
 };
 
 int main()
 {
+
     Person p1 { "Tom" };
     p1.Print();
 }
