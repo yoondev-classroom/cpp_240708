@@ -9,6 +9,9 @@ using namespace std;
 //  - 참조 계수를 통해 공유되는 자원은
 //    수정이 불가능한 형태로 만들어야 합니다.
 
+//  - COW(Copy on Write) / Lazy Copy(지연된 복사)
+//   => 데이터가 수정될 때, 복사본을 생성해서 분리합니다.
+
 class User {
     char* name;
     int age;

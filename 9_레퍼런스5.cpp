@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-#if 1
+#if 0
 int main()
 {
     int n;
@@ -33,10 +33,10 @@ void foo(const int& r)
     std::cout << "const lvalue reference" << std::endl;
 }
 
-void foo(int& r)
-{
-    std::cout << "lvalue reference" << std::endl;
-}
+// void foo(int& r)
+// {
+//     std::cout << "lvalue reference" << std::endl;
+// }
 
 // C++11, rvalue reference
 // : rvalue를 참조할 수 있습니다.
@@ -50,8 +50,8 @@ int main()
     int n;
     foo(n);
 
-    const int c = 100;
-    foo(c);
+    // const int c = 100;
+    // foo(c);
 
     foo(100);
 }

@@ -10,14 +10,14 @@ class User {
     std::string address;
 
 public:
-    User(std::string n, std::string a)
+    User(const std::string& n, const std::string& a)
         : name { n } // 문자열을 인자로 갖는 생성자 호출
         , address { a } // 문자열을 인자로 갖는 생성자 호출
     {
     }
 
 #if 0
-    User(std::string n, std::string a)
+    User(const std::string& n, const std::string& a)
     // name 객체의 기본 생성자 호출
     // address 객체의 기본 생성자 호출
     {
@@ -34,7 +34,7 @@ int main()
 #endif
 
 // 2. C++11, 멤버 초기화
-#if 0
+#if 1
 class User {
     std::string name = "Tom";
     std::string address = "Seoul";
@@ -42,7 +42,7 @@ class User {
 public:
     User() { }
 
-    User(std::string s)
+    User(const std::string& s)
         : name { s }
     {
     }
