@@ -49,6 +49,11 @@ public:
     {
         return buff[top];
     }
+
+    const TYPE& Top() const
+    {
+        return buff[top];
+    }
 };
 
 class Sample {
@@ -88,6 +93,7 @@ int main()
 
 // C++에는 이미 잘만들어진 stack이 존재합니다.
 
+#if 1
 #include <stack> // std::stack
 // 컨테이너
 //  => STL(Standard Template Library)
@@ -109,3 +115,4 @@ int main()
     std::cout << s1.top() << std::endl;
     s1.pop();
 }
+#endif
