@@ -46,7 +46,6 @@ public:
 // 초기화리스트의 초기화 순서
 //  1. 부모 클래스 생성자 호출
 //  2. 선언된 멤버의 순서대로 생성자 호출
-
 class Animal : public Sample {
     Sample m1;
     Sample m2;
