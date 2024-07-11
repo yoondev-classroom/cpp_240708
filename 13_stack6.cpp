@@ -26,10 +26,18 @@ public:
         delete[] buff;
     }
 
-    //---
-    Stack(size_t len)
+//---
+#if 0
+    Stack()
     {
-        std::cout << "Stack(size_t)" << std::endl;
+        top = 0;
+        buff = new int[10];
+    }
+#endif
+
+    // 파라미터 기본값을 통해 불필요한 오버로딩을 제거할 수 있습니다.
+    Stack(size_t len = 10)
+    {
         top = 0;
         buff = new int[len];
     }
@@ -54,6 +62,8 @@ public:
 
 int main()
 {
+    Stack s2;
+
     // Stack s1(100);
     Stack s1 { 100 };
     // 객체의 생성자 인자를 전달할 때, 복사 초기화보다는

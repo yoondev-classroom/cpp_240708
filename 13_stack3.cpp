@@ -37,9 +37,11 @@ public:
         return buff[top];
     }
 
+    // void Init(Stack* this)
     void Init()
     {
         top = 0;
+        // this->top = 0;
     }
 };
 
@@ -55,6 +57,7 @@ int main()
     //  => 객체(object)
 
     s1.Init();
+    // Stack::Init(&s1)
 
     s1.Push(10);
     s1.Push(20);
