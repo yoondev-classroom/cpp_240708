@@ -4,7 +4,6 @@
 using namespace std;
 
 // 클래스도 템플릿으로 만들 수 있습니다.
-
 template <typename TYPE>
 class Stack {
 private:

@@ -38,7 +38,7 @@ TYPE square(TYPE x) { return x * x; }
 int main()
 {
     short s = 100;
-    auto r = square<int>(s);
+    auto r = square(s); // 암묵적인 타입 결정
 
     //   type parameter
     //      |

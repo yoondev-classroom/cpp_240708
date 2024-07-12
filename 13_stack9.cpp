@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-#if 0
+#if 1
 template <typename TYPE>
 class Stack {
 private:
@@ -38,8 +38,18 @@ public:
         ++top;
     }
 
-    // 컨테이너에서 데이터를 제거하는 연산과,
-    // 데이터를 참조하는 연산을 분리합니다.
+    /*
+    TYPE& Pop()
+    {
+        --top;
+        return buff[top;]
+    }
+
+    */
+    // - 문제: 유효하지 않은 영역에 대한 참조가 반환되면 안됩니다.
+    // - 해결 방법: 컨테이너에서 데이터를 제거하는 연산과,
+    //          데이터를 참조하는 연산을 분리합니다.
+
     void Pop()
     {
         --top;
