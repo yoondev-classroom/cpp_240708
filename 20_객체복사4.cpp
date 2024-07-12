@@ -60,3 +60,12 @@ int main()
     // User other { user };
     // other.Print();
 }
+
+// STL - 소유권(Ownership) 스마트 포인터
+// 1) shared_ptr
+//  => 소유권 공유
+//    "참조 계수" + "소유권 이전"
+
+// 2) unique_ptr
+//  => 소유권 독점
+//    "복사 금지" + "소유권 이전"

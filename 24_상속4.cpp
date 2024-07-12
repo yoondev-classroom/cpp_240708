@@ -16,6 +16,7 @@ public:
     {
         cout << "Derived()" << endl;
     }
+
     ~Derived()
     {
         cout << "~Derived()" << endl;
