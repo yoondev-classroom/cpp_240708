@@ -27,8 +27,8 @@ public:
 // => 객체를 생성하기 위해서는 반드시 오버라이딩 해야 합니다.
 class Rect : public Shape {
 public:
-    // void Draw() const override { }
-    // Shape* Clone() const override { return nullptr; }
+    void Draw() const override { }
+    Shape* Clone() const override { return nullptr; }
 };
 
 int main()
