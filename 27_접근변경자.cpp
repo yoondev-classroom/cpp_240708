@@ -20,7 +20,7 @@ public:
 };
 
 class Derived : private Base {
-    //              ------
+    //           ------
     //             접근 변경자
 };
 
@@ -42,6 +42,6 @@ class Derived : private Base {
 int main()
 {
     Derived d;
-    d.c = 10;
-    d.b = 42;
+    // d.c = 10;
+    // d.b = 42;
 }

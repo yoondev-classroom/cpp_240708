@@ -3,8 +3,11 @@
 #include <vector>
 using namespace std;
 
-// 도형을 선택해서, 복제하는 기능을 구현하고 싶습니다.
+// * Refactoring, 마틴 파울러
+// => 코드의 유지보수성을 떨어뜨리는 요소를 냄새로 규정합니다.
+//  : Replace type code with poloymorphism
 
+// 도형을 선택해서, 복제하는 기능을 구현하고 싶습니다.
 class Shape {
 public:
     virtual void Draw() const { cout << "Shape Rect" << endl; }
@@ -22,7 +25,7 @@ class Rect : public Shape {
 public:
     void Draw() const override { cout << "Draw Rect" << endl; }
 
-    virtual Shape* Clone() const
+    Shape* Clone() const override
     {
         return new Rect { *this };
     }
@@ -32,7 +35,7 @@ class Circle : public Shape {
 public:
     void Draw() const override { cout << "Draw Circle" << endl; }
 
-    virtual Shape* Clone() const
+    Shape* Clone() const override
     {
         return new Circle { *this };
     }
@@ -42,7 +45,7 @@ class Triangle : public Shape {
 public:
     void Draw() const override { cout << "Draw Triangle" << endl; }
 
-    virtual Shape* Clone() const
+    Shape* Clone() const override
     {
         return new Triangle { *this };
     }
