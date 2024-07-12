@@ -90,6 +90,8 @@ int main()
     Point result = pt1 + pt2;
     result.Print();
     //  멤버함수: pt1.operator+(pt2);
+    // => 클래스의 설계자만 추가할 수 있습니다.
+
     //  일반함수: operator+(pt1, pt2);
 
     // 객체를 대상으로 연산자를 사용할 경우,
