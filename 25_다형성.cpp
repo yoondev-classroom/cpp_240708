@@ -28,4 +28,6 @@ int main()
     //  => Upcasting
     Animal* p = &d;
     Animal& r = d;
+
+    // => Downcasting은 암묵적으로 허용되지 않습니다.
 }

@@ -1,51 +1,51 @@
-// 25_다형성8.cpp
+// 25_다형성9.cpp
 #include <iostream>
 #include <vector>
 using namespace std;
 
-// 추상화
-// => 클래스를 설계할 때,
-//    필요한 상태와 행위를 정의하는 것
-
-// 1. 각 도형의 클래스를 설계
-// 2. 부모 클래스를 도입
-//  => 부모의 포인터를 통해 자식 객체를 참조할 수 있습니다.
-//  => 동종을 보관하는 컨테이너
-
-// 3. 자식의 공통의 기능을 부모의 포인터/레퍼런스를 통해 이용하기 위해서는
-//    반드시 해당 특징이 부모로부터 비롯되어야 합니다.
-//   : LSP(Liskov Substitution Principle, 리스코프 치환 원칙)
-//   => "자식의 공통의 기능은 부모로부터 비롯되어야 한다"
-//      자식 클래스는 부모 클래스도 대체할 수 있어야 한다.
-
-// 4. 자식이 재정의하는 부모의 멤버 함수는 반드시 가상함수이어야 합니다.
-
-// 5. 다형성은 OCP(Open Close Principle)를 만족합니다.
-//   => 개방 폐쇄 원칙
-//     확장에는 열려 있고, 수정에는 닫혀 있어야 한다.
-//   "새로운 기능이 추가되어도, 기존 코드는 수정되면 안된다."
+// 도형을 선택해서, 복제하는 기능을 구현하고 싶습니다.
 
 class Shape {
 public:
     virtual void Draw() const { cout << "Shape Rect" << endl; }
 
+    virtual Shape* Clone() const
+    {
+        return new Shape { *this };
+        // 복사 생성자를 통해 자신을 복제하는 함수입니다.
+    }
+
     virtual ~Shape() { }
-    // 부모 클래스의 소멸자는 반드시 가상이어야 합니다.
 };
 
 class Rect : public Shape {
 public:
     void Draw() const override { cout << "Draw Rect" << endl; }
+
+    virtual Shape* Clone() const
+    {
+        return new Rect { *this };
+    }
 };
 
 class Circle : public Shape {
 public:
     void Draw() const override { cout << "Draw Circle" << endl; }
+
+    virtual Shape* Clone() const
+    {
+        return new Circle { *this };
+    }
 };
 
 class Triangle : public Shape {
 public:
     void Draw() const override { cout << "Draw Triangle" << endl; }
+
+    virtual Shape* Clone() const
+    {
+        return new Triangle { *this };
+    }
 };
 
 int main()
@@ -64,13 +64,32 @@ int main()
             shapes.push_back(new Triangle); // !!!
         }
 
+        else if (cmd == 8) {
+            int index;
+            cout << "몇번째 도형입니까? ";
+            cin >> index;
+
+            Shape* copy = shapes[index]->Clone();
+            shapes.push_back(copy);
+            // Prototype Pattern
+
+            // shapes[index] : Shape*
+            //  Rect? Circle? Triangle?
+            /*
+            if (shapes[index]가 Rect) {
+              shapes.push_back(new Rect(*static_cast<Rect*>(shapes[index])))
+            } else if (shapes[index]가 Circle) {
+              shapes.push_back(new Circle(*static_cast<Rect*>(shapes[index])))
+            }
+            // ...
+
+            */
+
+        }
+
         else if (cmd == 9) {
             for (Shape* e : shapes) {
                 e->Draw();
-                // e    -> Rect  -> Rect::Draw
-                //        Circle -> Circle::Draw
-                //       Triangle -> Triangle::Draw
-                // "다형성" - Polymorphism
             }
         } else if (cmd == 0) {
             break;

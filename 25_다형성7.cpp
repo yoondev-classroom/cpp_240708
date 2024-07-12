@@ -28,7 +28,7 @@ public:
 int main()
 {
     // Dog d;
-    Animal* p = new Dog;
 
+    Animal* p = new Dog;
     delete p;
 }
