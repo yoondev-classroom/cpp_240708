@@ -102,3 +102,7 @@ int main()
     cout << s.top() << endl;
     s.pop();
 }
+
+// * Effective Modern C++
+//  - C++11/14
+//  - 스콧 마이어스
